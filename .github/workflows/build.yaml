@@ -48,6 +48,7 @@ jobs:
     needs:
       - build
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - name: Download aarch64
         uses: actions/download-artifact@v4
