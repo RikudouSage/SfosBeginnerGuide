@@ -12,11 +12,7 @@
 # The name of your application
 TARGET = harbour-beginner-guide
 
-CONFIG += sailfishapp
-QT += dbus
-
-SOURCES += src/harbour-beginner-guide.cpp \
-    src/appsettings.cpp
+CONFIG += sailfishapp_qml
 
 DISTFILES += qml/harbour-beginner-guide.qml \
     qml/components/LinkButton.qml \
@@ -40,6 +36,3 @@ CONFIG += sailfishapp_i18n
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/harbour-beginner-guide-de.ts
-
-HEADERS += \
-    src/appsettings.h

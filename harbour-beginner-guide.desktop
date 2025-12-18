@@ -2,7 +2,7 @@
 Type=Application
 X-Nemo-Application-Type=silica-qt5
 Icon=harbour-beginner-guide
-Exec=harbour-beginner-guide
+Exec=sailfish-qml harbour-beginner-guide
 Name=Beginner's Guide
 
 [X-Sailjail]

@@ -123,8 +123,8 @@ Page {
             pageToLoad = pageToLoad.substring(1);
         }
 
-        var language = settings.language;
-        if (appRoot.languages.indexOf(settings.language) < 0) {
+        var language = settings.language || appRoot.systemLanguage
+        if (appRoot.languages.indexOf(language) < 0) {
             language = "en";
         }
 
@@ -134,7 +134,7 @@ Page {
 
         const pageUrl = apiUrl + '/' + language + '/' + pageToLoad;
 
-        if (isDebug) {
+        if (appRoot.isDebug) {
             console.log('Sending GET request to ' + pageUrl);
         }
 
@@ -142,7 +142,7 @@ Page {
         xhr.open("GET", pageUrl, true);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (isDebug) {
+                if (appRoot.isDebug) {
                     console.log('Got response from ' + pageUrl + ': ' + xhr.status);
                 }
                 if (xhr.status === 200) {
