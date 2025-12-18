@@ -33,5 +33,27 @@
         <extracomment>Error message</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Settings</source>
+        <extracomment>Pull down menu item</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Settings</name>
+    <message>
+        <source>Settings</source>
+        <extracomment>Page title</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <extracomment>As in automatic language selection</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

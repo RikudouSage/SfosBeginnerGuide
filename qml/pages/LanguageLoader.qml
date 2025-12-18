@@ -25,7 +25,7 @@ Page {
                     appRoot.languages = ["en"];
                 }
 
-                pageStack.replace("ReaderPage.qml")
+                pageStack.replace("ReaderPage.qml", {isMainPage: true})
             }
         }
         xhr.send();

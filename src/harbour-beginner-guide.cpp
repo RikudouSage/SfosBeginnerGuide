@@ -10,6 +10,7 @@
 #include <sailfishapp.h>
 
 #include "appsettings.h"
+#include "intl.h"
 
 int main(int argc, char *argv[])
 {
@@ -17,6 +18,8 @@ int main(int argc, char *argv[])
     QScopedPointer<QQuickView> v(SailfishApp::createView());
 
     v->rootContext()->setContextProperty("settings", new AppSettings(app.data()));
+
+    qmlRegisterType<Intl>("dev.chrastecky", 1, 0, "Intl");
 
 #ifdef QT_DEBUG
     v->rootContext()->setContextProperty("isDebug", true);

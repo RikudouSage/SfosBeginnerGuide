@@ -5,6 +5,11 @@ import "../components"
 
 Page {
     property string pageToLoad: ''
+
+    property bool settingsAvailable: typeof content.meta !== 'undefined' &&
+                                     typeof content.meta.actions !== 'undefined' &&
+                                     content.meta.actions.indexOf('settings') > -1;
+
     property var content: ({})
     property var links: []
     property var sections: []
@@ -28,7 +33,9 @@ Page {
             sections = content.sections;
         }
 
-        console.log(JSON.stringify(content))
+        if (isDebug) {
+            console.log(JSON.stringify(content))
+        }
     }
 
     BusyLabel {
@@ -42,7 +49,14 @@ Page {
         contentHeight: column.height
 
         PullDownMenu {
-            visible: false // todo display based on actions
+            visible: settingsAvailable // add other conditions here if more actions become available
+
+            MenuItem {
+                visible: settingsAvailable
+                //: Pull down menu item
+                text: qsTr("Settings")
+                onClicked: pageStack.push("Settings.qml")
+            }
         }
 
         Column {

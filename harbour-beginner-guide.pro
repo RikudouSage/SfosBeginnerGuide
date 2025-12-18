@@ -16,13 +16,15 @@ CONFIG += sailfishapp
 QT += dbus
 
 SOURCES += src/harbour-beginner-guide.cpp \
-    src/appsettings.cpp
+    src/appsettings.cpp \
+    src/intl.cpp
 
 DISTFILES += qml/harbour-beginner-guide.qml \
     qml/components/LinkButton.qml \
     qml/cover/CoverPage.qml \
     qml/pages/LanguageLoader.qml \
     qml/pages/ReaderPage.qml \
+    qml/pages/Settings.qml \
     rpm/harbour-beginner-guide.changes.in \
     rpm/harbour-beginner-guide.changes.run.in \
     rpm/harbour-beginner-guide.spec \
@@ -42,4 +44,5 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/harbour-beginner-guide-de.ts
 
 HEADERS += \
-    src/appsettings.h
+    src/appsettings.h \
+    src/intl.h

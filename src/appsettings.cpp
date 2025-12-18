@@ -4,11 +4,8 @@
 
 AppSettings::AppSettings(QObject *parent) : QObject(parent)
 {
-    const auto systemLanguage = QLocale::languageToString(QLocale::system().language()).toLower();
-    prop_language = settings->value("language", systemLanguage).toString();
-    if (prop_language == "") {
-        prop_language = systemLanguage;
-    }
+
+    prop_language = settings->value("language", "").toString();
 }
 
 AppSettings::~AppSettings() {
@@ -17,10 +14,24 @@ AppSettings::~AppSettings() {
 
 const QString AppSettings::language() const
 {
-    return prop_language;
+    if (prop_language != "") {
+        return prop_language;
+    }
+
+    return QLocale::languageToString(QLocale::system().language()).toLower();
 }
 
 void AppSettings::setLanguage(const QString &value)
+{
+    setRawLanguage(value);
+}
+
+const QString AppSettings::rawLanguage() const
+{
+    return prop_language;
+}
+
+void AppSettings::setRawLanguage(const QString &value)
 {
     if (value == prop_language) {
         return;
@@ -28,5 +39,7 @@ void AppSettings::setLanguage(const QString &value)
 
     settings->setValue("language", value);
     prop_language = value;
+
     emit languageChanged();
+    emit rawLanguageChanged();
 }
