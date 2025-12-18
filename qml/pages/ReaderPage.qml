@@ -7,6 +7,7 @@ Page {
     property string pageToLoad: ''
     property var content: ({})
     property var links: []
+    property var sections: []
 
     property bool loaded: false
     property bool notFound: false
@@ -22,6 +23,9 @@ Page {
 
         if (typeof content.links !== 'undefined') {
             links = content.links;
+        }
+        if (typeof content.sections !== 'undefined') {
+            sections = content.sections;
         }
 
         console.log(JSON.stringify(content))
@@ -74,6 +78,29 @@ Page {
                     width: parent.width - (Theme.paddingLarge * 2)
                     x: Theme.paddingLarge
                     textFormat: Text.RichText
+                }
+
+                Repeater {
+                    id: sectionsRepeater
+                    model: sections
+
+                    ExpandingSectionGroup { // animations don't work without this
+                        currentIndex: -1
+
+                        ExpandingSection {
+                            title: modelData.title
+
+                            content.sourceComponent: Column {
+                                Label {
+                                    text: modelData.content
+                                    wrapMode: Text.WordWrap
+                                    width: parent.width - (Theme.paddingLarge * 2)
+                                    x: Theme.paddingLarge
+                                    textFormat: Text.RichText
+                                }
+                            }
+                        }
+                    }
                 }
 
                 Repeater {
