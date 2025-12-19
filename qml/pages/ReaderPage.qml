@@ -20,14 +20,31 @@ Page {
     property bool notFound: false
     property bool genericError: false
 
-    property string css: ''
-
     id: page
     allowedOrientations: defaultAllowedOrientations
 
+    function processText(text) {
+        const highlight = Theme.rgba(Theme.highlightColor, 1);
+        const primary = Theme.rgba(Theme.primaryColor, 1);
+
+        const css = "<style>a {color: " + highlight + "; font-weight: bold; }</style>";
+
+        // https://stackoverflow.com/a/1732454
+        const regex = /<blockquote\b[^>]*>([\s\S]*?)<\/blockquote>/gi;
+        text = text.replace(regex, function(_, inner) {
+            return ""
+              + "<table style='margin-top:" + Theme.paddingMedium + "px'><tr>"
+              + "<td style='background-color: " + primary + "'>&nbsp;</td>"
+              + "<td style='padding-left: 8px'>" + inner + "</td>"
+              + "</tr></table>";
+        });
+
+        return css + text;
+    }
+
     function handleLoading() {
         pageTitle.title = content.meta.title;
-        mainText.text = css + content.content;
+        mainText.text = processText(content.content);
         page.loaded = true;
 
         if (typeof content.links !== 'undefined') {
@@ -118,7 +135,7 @@ Page {
 
                             content.sourceComponent: Column {
                                 Label {
-                                    text: css + modelData.content
+                                    text: processText(modelData.content)
                                     wrapMode: Text.WordWrap
                                     width: parent.width - (Theme.paddingLarge * 2)
                                     x: Theme.paddingLarge
@@ -149,9 +166,6 @@ Page {
     }
 
     Component.onCompleted: {
-        const color = Theme.rgba(Theme.highlightColor, 1);
-        css = "<style>a {color: " + color + "; font-weight: bold; }</style>";
-
         while (pageToLoad.indexOf('/') === 0) {
             pageToLoad = pageToLoad.substring(1);
         }
