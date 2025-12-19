@@ -1,6 +1,8 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
+import dev.chrastecky 1.0
+
 import "../components"
 
 Page {
@@ -36,6 +38,10 @@ Page {
         if (isDebug) {
             console.log(JSON.stringify(content))
         }
+    }
+
+    LinkHandler {
+        id: linkHandler
     }
 
     BusyLabel {
@@ -92,6 +98,10 @@ Page {
                     width: parent.width - (Theme.paddingLarge * 2)
                     x: Theme.paddingLarge
                     textFormat: Text.RichText
+
+                    onLinkActivated: {
+                        linkHandler.handleLink(link);
+                    }
                 }
 
                 Repeater {
@@ -111,6 +121,10 @@ Page {
                                     width: parent.width - (Theme.paddingLarge * 2)
                                     x: Theme.paddingLarge
                                     textFormat: Text.RichText
+
+                                    onLinkActivated: {
+                                        linkHandler.handleLink(link);
+                                    }
                                 }
                             }
                         }

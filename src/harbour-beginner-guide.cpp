@@ -11,6 +11,7 @@
 
 #include "appsettings.h"
 #include "intl.h"
+#include "linkhandler.h"
 
 int main(int argc, char *argv[])
 {
@@ -20,6 +21,7 @@ int main(int argc, char *argv[])
     v->rootContext()->setContextProperty("settings", new AppSettings(app.data()));
 
     qmlRegisterType<Intl>("dev.chrastecky", 1, 0, "Intl");
+    qmlRegisterType<LinkHandler>("dev.chrastecky", 1, 0, "LinkHandler");
 
 #ifdef QT_DEBUG
     v->rootContext()->setContextProperty("isDebug", true);
