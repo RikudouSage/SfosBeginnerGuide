@@ -18,6 +18,8 @@ void LinkHandler::handleLink(const QString &link)
 {
     const QUrl url(link);
 
+    qDebug() << url.scheme();
+
     if (url.scheme() == SchemeHttp || url.scheme() == SchemeHttps) {
         handleExternalLink(link);
     } else if (url.scheme() == SchemeOpenApp) {
@@ -29,7 +31,7 @@ void LinkHandler::handleLink(const QString &link)
 
 void LinkHandler::handleAppLink(const QString &url)
 {
-    const auto appName = QString(url).mid(SchemeOpenApp.length());
+    const auto appName = QString(url).mid(SchemeOpenApp.length() + QStringLiteral("://").length());
     const auto prefixes = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
 
     for (const auto &prefix : prefixes) {
