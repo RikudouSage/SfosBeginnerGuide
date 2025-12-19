@@ -6,9 +6,9 @@
 #include <QStandardPaths>
 #include <QFile>
 
-static const auto SchemeHttp = QStringLiteral("http://");
-static const auto SchemeHttps = QStringLiteral("https://");
-static const auto SchemeOpenApp = QStringLiteral("start-app://");
+static const auto SchemeHttp = QStringLiteral("http");
+static const auto SchemeHttps = QStringLiteral("https");
+static const auto SchemeOpenApp = QStringLiteral("start-app");
 
 LinkHandler::LinkHandler(QObject *parent) : QObject(parent)
 {
@@ -16,9 +16,11 @@ LinkHandler::LinkHandler(QObject *parent) : QObject(parent)
 
 void LinkHandler::handleLink(const QString &link)
 {
-    if (link.startsWith(SchemeHttp) || link.startsWith(SchemeHttps)) {
+    const QUrl url(link);
+
+    if (url.scheme() == SchemeHttp || url.scheme() == SchemeHttps) {
         handleExternalLink(link);
-    } else if (link.startsWith(SchemeOpenApp)) {
+    } else if (url.scheme() == SchemeOpenApp) {
         handleAppLink(link);
     } else {
         emit unsupportedLinkType();

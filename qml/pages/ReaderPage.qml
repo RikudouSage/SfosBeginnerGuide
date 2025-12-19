@@ -20,12 +20,14 @@ Page {
     property bool notFound: false
     property bool genericError: false
 
+    property string css: ''
+
     id: page
     allowedOrientations: defaultAllowedOrientations
 
     function handleLoading() {
         pageTitle.title = content.meta.title;
-        mainText.text = content.content;
+        mainText.text = css + content.content;
         page.loaded = true;
 
         if (typeof content.links !== 'undefined') {
@@ -116,7 +118,7 @@ Page {
 
                             content.sourceComponent: Column {
                                 Label {
-                                    text: modelData.content
+                                    text: css + modelData.content
                                     wrapMode: Text.WordWrap
                                     width: parent.width - (Theme.paddingLarge * 2)
                                     x: Theme.paddingLarge
@@ -147,6 +149,9 @@ Page {
     }
 
     Component.onCompleted: {
+        const color = Theme.rgba(Theme.highlightColor, 1);
+        css = "<style>a {color: " + color + "; font-weight: bold; }</style>";
+
         while (pageToLoad.indexOf('/') === 0) {
             pageToLoad = pageToLoad.substring(1);
         }
