@@ -18,8 +18,6 @@ void LinkHandler::handleLink(const QString &link)
 {
     const QUrl url(link);
 
-    qDebug() << url.scheme();
-
     if (url.scheme() == SchemeHttp || url.scheme() == SchemeHttps) {
         handleExternalLink(link);
     } else if (url.scheme() == SchemeOpenApp) {
