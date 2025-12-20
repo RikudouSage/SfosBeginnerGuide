@@ -61,6 +61,18 @@ Page {
 
     LinkHandler {
         id: linkHandler
+        onAppNotFound: notificationStack.push(qsTr("The requested app is not installed."), true)
+        onUnsupportedLinkType: notificationStack.push(qsTr("This type of link is not supported."), true)
+    }
+
+    NotificationStack {
+        id: notificationStack
+        anchors {
+            left: parent.left
+            right: parent.right
+            top: parent.top
+            topMargin: Theme.paddingLarge
+        }
     }
 
     BusyLabel {

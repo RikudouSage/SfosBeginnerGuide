@@ -38,6 +38,14 @@
         <extracomment>Pull down menu item</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The requested app is not installed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This type of link is not supported.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>

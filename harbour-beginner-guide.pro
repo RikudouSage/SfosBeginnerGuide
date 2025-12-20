@@ -21,6 +21,8 @@ SOURCES += src/harbour-beginner-guide.cpp \
     src/linkhandler.cpp
 
 DISTFILES += qml/harbour-beginner-guide.qml \
+    qml/components/NotificationBanner.qml \
+    qml/components/NotificationStack.qml \
     qml/components/LinkButton.qml \
     qml/cover/CoverPage.qml \
     qml/pages/LanguageLoader.qml \
