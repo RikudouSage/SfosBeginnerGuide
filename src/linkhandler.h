@@ -13,6 +13,7 @@ public:
 signals:
     void appNotFound();
     void unsupportedLinkType();
+    void readerPageRequested(const QString &page);
 
 private:
     void handleAppLink(const QString &url);
