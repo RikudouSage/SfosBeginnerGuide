@@ -39,7 +39,7 @@ void LinkHandler::handleAppLink(const QString &url)
         const auto potentialPath = prefix + "/applications/" + appName + ".desktop";
         if (QFile(potentialPath).exists()) {
             QDesktopServices::openUrl(QUrl::fromLocalFile(potentialPath));
-            break;
+            return;
         }
     }
 
