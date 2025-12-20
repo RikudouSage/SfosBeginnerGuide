@@ -9,12 +9,13 @@
 static const auto SchemeHttp = QStringLiteral("http");
 static const auto SchemeHttps = QStringLiteral("https");
 static const auto SchemeOpenApp = QStringLiteral("start-app");
+static const auto SchemeNone = QStringLiteral("");
 
 LinkHandler::LinkHandler(QObject *parent) : QObject(parent)
 {
 }
 
-void LinkHandler::handleLink(const QString &link)
+void LinkHandler::handleLink(const QString &link, const QString &currentPage)
 {
     const QUrl url(link);
 
@@ -22,6 +23,8 @@ void LinkHandler::handleLink(const QString &link)
         handleExternalLink(link);
     } else if (url.scheme() == SchemeOpenApp) {
         handleAppLink(link);
+    } else if (url.scheme() == SchemeNone) {
+        handleDocumentLink(link, currentPage);
     } else {
         emit unsupportedLinkType();
     }
@@ -46,4 +49,9 @@ void LinkHandler::handleAppLink(const QString &url)
 void LinkHandler::handleExternalLink(const QString &url)
 {
     QDesktopServices::openUrl(QUrl(url));
+}
+
+void LinkHandler::handleDocumentLink(const QString &url, const QString &currentUrl)
+{
+    qDebug() << url << currentUrl;
 }

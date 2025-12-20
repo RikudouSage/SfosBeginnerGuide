@@ -119,7 +119,7 @@ Page {
                     textFormat: Text.RichText
 
                     onLinkActivated: {
-                        linkHandler.handleLink(link);
+                        linkHandler.handleLink(link, pageToLoad);
                     }
                 }
 
@@ -142,7 +142,7 @@ Page {
                                     textFormat: Text.RichText
 
                                     onLinkActivated: {
-                                        linkHandler.handleLink(link);
+                                        linkHandler.handleLink(link, pageToLoad);
                                     }
                                 }
                             }
