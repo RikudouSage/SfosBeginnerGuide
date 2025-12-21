@@ -10,6 +10,7 @@ Page {
 
     property bool settingsAvailable: typeof content.meta !== 'undefined' &&
                                      typeof content.meta.actions !== 'undefined' &&
+                                     content.meta.actions !== null &&
                                      content.meta.actions.indexOf('settings') > -1;
 
     property var content: ({})
@@ -63,6 +64,7 @@ Page {
         id: linkHandler
         onAppNotFound: notificationStack.push(qsTr("The requested app is not installed."), true)
         onUnsupportedLinkType: notificationStack.push(qsTr("This type of link is not supported."), true)
+        onReaderPageRequested: pageStack.push("ReaderPage.qml", {pageToLoad: page})
     }
 
     NotificationStack {
@@ -131,7 +133,7 @@ Page {
                     textFormat: Text.RichText
 
                     onLinkActivated: {
-                        linkHandler.handleLink(link, pageToLoad);
+                        linkHandler.handleLink(link);
                     }
                 }
 
@@ -154,7 +156,7 @@ Page {
                                     textFormat: Text.RichText
 
                                     onLinkActivated: {
-                                        linkHandler.handleLink(link, pageToLoad);
+                                        linkHandler.handleLink(link);
                                     }
                                 }
                             }

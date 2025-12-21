@@ -8,7 +8,7 @@ class LinkHandler : public QObject
     Q_OBJECT
 public:
     explicit LinkHandler(QObject *parent = nullptr);
-    Q_INVOKABLE void handleLink(const QString &link, const QString &currentPage);
+    Q_INVOKABLE void handleLink(const QString &link);
 
 signals:
     void appNotFound();
@@ -18,7 +18,7 @@ signals:
 private:
     void handleAppLink(const QString &url);
     void handleExternalLink(const QString &url);
-    void handleDocumentLink(const QString &url, const QString &currentUrl);
+    void handleDocumentLink(const QString &link);
 };
 
 #endif // LINKHANDLER_H
