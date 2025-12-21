@@ -46,6 +46,15 @@
         <source>This type of link is not supported.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Could not open the link.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tutorial</source>
+        <extracomment>PUll down menu item</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>

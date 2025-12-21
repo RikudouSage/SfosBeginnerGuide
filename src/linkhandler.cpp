@@ -38,7 +38,9 @@ void LinkHandler::handleAppLink(const QString &url)
     for (const auto &prefix : prefixes) {
         const auto potentialPath = prefix + "/applications/" + appName + ".desktop";
         if (QFile(potentialPath).exists()) {
-            QDesktopServices::openUrl(QUrl::fromLocalFile(potentialPath));
+            if (!QDesktopServices::openUrl(QUrl::fromLocalFile(potentialPath))) {
+                emit handlingLinkFailed();
+            }
             return;
         }
     }
@@ -48,7 +50,9 @@ void LinkHandler::handleAppLink(const QString &url)
 
 void LinkHandler::handleExternalLink(const QString &url)
 {
-    QDesktopServices::openUrl(QUrl(url));
+    if (!QDesktopServices::openUrl(QUrl(url))) {
+        emit handlingLinkFailed();
+    }
 }
 
 void LinkHandler::handleDocumentLink(const QString &link)

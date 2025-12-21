@@ -8,11 +8,6 @@ import "../components"
 Page {
     property string pageToLoad: ''
 
-    property bool settingsAvailable: typeof content.meta !== 'undefined' &&
-                                     typeof content.meta.actions !== 'undefined' &&
-                                     content.meta.actions !== null &&
-                                     content.meta.actions.indexOf('settings') > -1;
-
     property var content: ({})
     property var links: []
     property var sections: []
@@ -23,6 +18,13 @@ Page {
 
     id: page
     allowedOrientations: defaultAllowedOrientations
+
+    function hasAction(actionName) {
+        return typeof content.meta !== 'undefined' &&
+               typeof content.meta.actions !== 'undefined' &&
+               content.meta.actions !== null &&
+               content.meta.actions.indexOf(actionName) > -1;
+    }
 
     function processText(text) {
         const highlight = Theme.rgba(Theme.highlightColor, 1);
@@ -64,6 +66,7 @@ Page {
         id: linkHandler
         onAppNotFound: notificationStack.push(qsTr("The requested app is not installed."), true)
         onUnsupportedLinkType: notificationStack.push(qsTr("This type of link is not supported."), true)
+        onHandlingLinkFailed: notificationStack.push(qsTr("Could not open the link."), true)
         onReaderPageRequested: pageStack.push("ReaderPage.qml", {pageToLoad: page})
     }
 
@@ -88,13 +91,20 @@ Page {
         contentHeight: column.height
 
         PullDownMenu {
-            visible: settingsAvailable // add other conditions here if more actions become available
+            visible: hasAction('settings') || hasAction('tutorial')
 
             MenuItem {
-                visible: settingsAvailable
+                visible: hasAction('settings')
                 //: Pull down menu item
                 text: qsTr("Settings")
                 onClicked: pageStack.push("Settings.qml")
+            }
+
+            MenuItem {
+                visible: hasAction('tutorial')
+                //: PUll down menu item
+                text: qsTr("Tutorial")
+                onClicked: linkHandler.handleLink("start-app://sailfish-tutorial")
             }
         }
 

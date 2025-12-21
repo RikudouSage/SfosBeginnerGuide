@@ -1,7 +1,7 @@
 Name:       harbour-beginner-guide
 
 Summary:    Beginner's Guide
-Version:    0.9.7
+Version:    0.9.8
 Release:    1
 License:    LICENSE
 URL:        http://example.org/
