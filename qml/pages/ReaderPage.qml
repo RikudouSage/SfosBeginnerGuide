@@ -37,7 +37,7 @@ Page {
         text = text.replace(regex, function(_, inner) {
             return ""
               + "<table style='margin-top:" + Theme.paddingMedium + "px'><tr>"
-              + "<td style='background-color: " + primary + "'>&nbsp;</td>"
+              + "<td style='background-color: " + highlight + "'>&nbsp;</td>"
               + "<td style='padding-left: 8px'>" + inner + "</td>"
               + "</tr></table>";
         });
