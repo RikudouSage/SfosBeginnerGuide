@@ -56,7 +56,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>It seems you don&apos;t have the Jolla store on your device.</source>
+        <source>It seems you don&apos;t have %1 on your device.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Jolla Store</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Storeman</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

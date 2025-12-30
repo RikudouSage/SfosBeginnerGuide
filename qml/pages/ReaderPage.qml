@@ -67,7 +67,8 @@ Page {
         onAppNotFound: notificationStack.push(qsTr("The requested app is not installed."), true)
         onUnsupportedLinkType: notificationStack.push(qsTr("This type of link is not supported."), true)
         onHandlingLinkFailed: notificationStack.push(qsTr("Could not open the link."), true)
-        onStoreNotAvailable: notificationStack.push(qsTr("It seems you don't have the Jolla store on your device."), true)
+        onStoreNotAvailable: notificationStack.push(qsTr("It seems you don't have %1 on your device.").arg(qsTr("Jolla Store")), true)
+        onStoremanNotAvailable: notificationStack.push(qsTr("It seems you don't have %1 on your device.").arg(qsTr("Storeman")), true)
         onReaderPageRequested: pageStack.push("ReaderPage.qml", {pageToLoad: page})
     }
 
