@@ -27,7 +27,9 @@
     </message>
     <message id="app-jolla-store">
         <location filename="../qml/pages/ReaderPage.qml" line="75"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="133"/>
         <source>Jolla Store</source>
+        <extracomment>Pull down menu item</extracomment>
         <translation>Jolla Store</translation>
     </message>
     <message id="error-link-handler-no-store">
@@ -39,7 +41,9 @@
     </message>
     <message id="app-storeman">
         <location filename="../qml/pages/ReaderPage.qml" line="82"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="141"/>
         <source>Storeman</source>
+        <extracomment>Pull down menu item</extracomment>
         <translation>Storeman</translation>
     </message>
     <message id="page-settings">
@@ -54,16 +58,22 @@ Page title</extracomment>
     <message id="app-tutorial">
         <location filename="../qml/pages/ReaderPage.qml" line="125"/>
         <source>Tutorial</source>
-        <extracomment>PUll down menu item</extracomment>
+        <extracomment>Pull down menu item</extracomment>
         <translation>Tutorial</translation>
     </message>
+    <message id="app-chum">
+        <location filename="../qml/pages/ReaderPage.qml" line="149"/>
+        <source>Chum</source>
+        <extracomment>Pull down menu item</extracomment>
+        <translation>Chum</translation>
+    </message>
     <message id="error-document-not-found">
-        <location filename="../qml/pages/ReaderPage.qml" line="142"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="166"/>
         <source>The requested page wasn&apos;t found, please try again later</source>
         <translation>The requested page wasn&apos;t found, please try again later</translation>
     </message>
     <message id="error-loading-failed">
-        <location filename="../qml/pages/ReaderPage.qml" line="148"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="172"/>
         <source>There was an error while loading the page, please try again later</source>
         <translation>There was an error while loading the page, please try again later</translation>
     </message>

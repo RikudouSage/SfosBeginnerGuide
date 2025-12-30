@@ -22,6 +22,7 @@
     </message>
     <message id="app-jolla-store">
         <source>Jolla Store</source>
+        <extracomment>Pull down menu item</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="error-link-handler-no-store">
@@ -31,6 +32,7 @@
     </message>
     <message id="app-storeman">
         <source>Storeman</source>
+        <extracomment>Pull down menu item</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="page-settings">
@@ -42,7 +44,7 @@ Page title</extracomment>
     </message>
     <message id="app-tutorial">
         <source>Tutorial</source>
-        <extracomment>PUll down menu item</extracomment>
+        <extracomment>Pull down menu item</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="error-document-not-found">
@@ -60,6 +62,11 @@ Page title</extracomment>
     </message>
     <message id="language-label">
         <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="app-chum">
+        <source>Chum</source>
+        <extracomment>Pull down menu item</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>

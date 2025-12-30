@@ -108,7 +108,7 @@ Page {
         contentHeight: column.height
 
         PullDownMenu {
-            visible: hasAction('settings') || hasAction('tutorial')
+            visible: hasAction('settings') || hasAction('tutorial') || hasAction('jolla-store') || hasAction('storeman') || hasAction('chum')
 
             MenuItem {
                 visible: hasAction('settings')
@@ -120,10 +120,34 @@ Page {
 
             MenuItem {
                 visible: hasAction('tutorial')
-                //: PUll down menu item
+                //: Pull down menu item
                 //% "Tutorial"
                 text: qsTrId("app-tutorial")
                 onClicked: linkHandler.handleLink("start-app://sailfish-tutorial")
+            }
+
+            MenuItem {
+                visible: hasAction('jolla-store')
+                //: Pull down menu item
+                //% "Jolla Store"
+                text: qsTrId("app-jolla-store")
+                onClicked: linkHandler.handleLink("start-app://store-client")
+            }
+
+            MenuItem {
+                visible: hasAction('storeman')
+                //: Pull down menu item
+                //% "Storeman"
+                text: qsTrId("app-storeman")
+                onClicked: linkHandler.handleLink("start-app://harbour-storeman")
+            }
+
+            MenuItem {
+                visible: hasAction('chum')
+                //: Pull down menu item
+                //% "Chum"
+                text: qsTrId("app-chum")
+                onClicked: linkHandler.handleLink("start-app://sailfishos-chum-gui")
             }
         }
 
