@@ -32,9 +32,8 @@ int main(int argc, char *argv[])
     QTranslator *translator = new QTranslator(app.data());
     if (!translator->load(QLocale::system(), "harbour-beginner-guide", "-", TRANSLATION_INSTALL_DIR)) {
         qWarning() << "Could not load translations for" << QLocale::system().name().toLatin1();
-    } else {
-        QCoreApplication::installTranslator(translator);
     }
+    QCoreApplication::installTranslator(translator);
 
     QScopedPointer<QQuickView> v(SailfishApp::createView());
     v->rootContext()->setContextProperty("settings", new AppSettings(app.data()));

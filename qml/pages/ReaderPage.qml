@@ -74,13 +74,13 @@ Page {
             //% "Jolla Store"
             const storeName = qsTrId("app-jolla-store");
             //% "It seems you don't have %1 on your device."
-            notificationStack.push(qsTrId("error-link-handler-no-store", storeName), true)
+            notificationStack.push(qsTrId("error-link-handler-no-store").arg(storeName), true)
         }
         onStoremanNotAvailable: {
             //% "Storeman"
             const storeName = qsTrId("app-storeman");
             //% "It seems you don't have %1 on your device."
-            notificationStack.push(qsTrId("error-link-handler-no-store", storeName), true)
+            notificationStack.push(qsTrId("error-link-handler-no-store").arg(storeName), true)
         }
         onReaderPageRequested: pageStack.push("ReaderPage.qml", {pageToLoad: page})
     }

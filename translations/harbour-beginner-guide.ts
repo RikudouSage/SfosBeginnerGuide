@@ -24,11 +24,9 @@
         <source>Jolla Store</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="error-link-handler-no-store" numerus="yes">
+    <message id="error-link-handler-no-store">
         <source>It seems you don&apos;t have %1 on your device.</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-        </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="app-storeman">
         <source>Storeman</source>
