@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="en_US">
 <context>
     <name></name>
     <message id="loading">
@@ -36,6 +36,7 @@
         <source>It seems you don&apos;t have %1 on your device.</source>
         <translation type="unfinished">
             <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message id="app-storeman">
@@ -50,7 +51,7 @@
         <extracomment>Pull down menu item
 ----------
 Page title</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Settings</translation>
     </message>
     <message id="app-tutorial">
         <location filename="../qml/pages/ReaderPage.qml" line="124"/>
