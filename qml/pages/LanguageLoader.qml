@@ -7,7 +7,8 @@ Page {
 
     BusyLabel {
         //: Inside a loader
-        text: qsTr("Loading...")
+        //% "Loading..."
+        text: qsTrId("loading")
         running: true
     }
 

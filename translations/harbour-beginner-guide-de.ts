@@ -2,85 +2,64 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
-    <name>CoverPage</name>
-    <message>
-        <source>My Cover</source>
-        <translation>Mein Cover</translation>
-    </message>
-</context>
-<context>
-    <name>LanguageLoader</name>
-    <message>
+    <name></name>
+    <message id="loading">
         <source>Loading...</source>
         <extracomment>Inside a loader</extracomment>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>ReaderPage</name>
-    <message>
-        <source>Loading...</source>
-        <extracomment>Inside a loader</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The requested page wasn&apos;t found, please try again later</source>
-        <extracomment>Error message</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>There was an error while loading the page, please try again later</source>
-        <extracomment>Error message</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <extracomment>Pull down menu item</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
+    <message id="error-link-handler-app-not-found">
         <source>The requested app is not installed.</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
+    <message id="error-link-handler-unknown-scheme">
         <source>This type of link is not supported.</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
+    <message id="error-link-handler-generic-error">
         <source>Could not open the link.</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
+    <message id="app-jolla-store">
+        <source>Jolla Store</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="error-link-handler-no-store" numerus="yes">
+        <source>It seems you don&apos;t have %1 on your device.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message id="app-storeman">
+        <source>Storeman</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="page-settings">
+        <source>Settings</source>
+        <extracomment>Pull down menu item
+----------
+Page title</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="app-tutorial">
         <source>Tutorial</source>
         <extracomment>PUll down menu item</extracomment>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>It seems you don&apos;t have %1 on your device.</source>
+    <message id="error-document-not-found">
+        <source>The requested page wasn&apos;t found, please try again later</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Jolla Store</source>
+    <message id="error-loading-failed">
+        <source>There was an error while loading the page, please try again later</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Storeman</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Settings</name>
-    <message>
-        <source>Settings</source>
-        <extracomment>Page title</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
+    <message id="language-auto">
         <source>Automatic</source>
         <extracomment>As in automatic language selection</extracomment>
         <translation type="unfinished"></translation>
     </message>
-    <message>
+    <message id="language-label">
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>

@@ -22,19 +22,22 @@ Page {
 
             PageHeader {
                 //: Page title
-                title: qsTr("Settings")
+                //% "Settings"
+                title: qsTrId("page-settings")
             }
 
             ComboBox {
                 property var itemData: [
                     //: As in automatic language selection
-                    {text: qsTr("Automatic"), value: ""}
+                    //% "Automatic"
+                    {text: qsTrId("language-auto"), value: ""}
                 ]
 
                 id: langSelect
                 width: parent.width - Theme.paddingLarge
                 x: Theme.paddingLarge
-                label: qsTr("Language")
+                //% "Language"
+                label: qsTrId("language-label")
 
                 menu: ContextMenu {
                     Repeater {

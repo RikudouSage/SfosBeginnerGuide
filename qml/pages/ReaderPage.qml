@@ -64,11 +64,24 @@ Page {
 
     LinkHandler {
         id: linkHandler
-        onAppNotFound: notificationStack.push(qsTr("The requested app is not installed."), true)
-        onUnsupportedLinkType: notificationStack.push(qsTr("This type of link is not supported."), true)
-        onHandlingLinkFailed: notificationStack.push(qsTr("Could not open the link."), true)
-        onStoreNotAvailable: notificationStack.push(qsTr("It seems you don't have %1 on your device.").arg(qsTr("Jolla Store")), true)
-        onStoremanNotAvailable: notificationStack.push(qsTr("It seems you don't have %1 on your device.").arg(qsTr("Storeman")), true)
+        //% "The requested app is not installed."
+        onAppNotFound: notificationStack.push(qsTrId("error-link-handler-app-not-found"), true)
+        //% "This type of link is not supported."
+        onUnsupportedLinkType: notificationStack.push(qsTrId("error-link-handler-unknown-scheme"), true)
+        //% "Could not open the link."
+        onHandlingLinkFailed: notificationStack.push(qsTrId("error-link-handler-generic-error"), true)
+        onStoreNotAvailable: {
+            //% "Jolla Store"
+            const storeName = qsTrId("app-jolla-store");
+            //% "It seems you don't have %1 on your device."
+            notificationStack.push(qsTrId("error-link-handler-no-store", storeName), true)
+        }
+        onStoremanNotAvailable: {
+            //% "Storeman"
+            const storeName = qsTrId("app-storeman");
+            //% "It seems you don't have %1 on your device."
+            notificationStack.push(qsTrId("error-link-handler-no-store", storeName), true)
+        }
         onReaderPageRequested: pageStack.push("ReaderPage.qml", {pageToLoad: page})
     }
 
@@ -84,7 +97,8 @@ Page {
 
     BusyLabel {
         //: Inside a loader
-        text: qsTr("Loading...")
+        //% "Loading..."
+        text: qsTrId("loading")
         running: !page.loaded
     }
 
@@ -98,14 +112,16 @@ Page {
             MenuItem {
                 visible: hasAction('settings')
                 //: Pull down menu item
-                text: qsTr("Settings")
+                //% "Settings"
+                text: qsTrId("page-settings")
                 onClicked: pageStack.push("Settings.qml")
             }
 
             MenuItem {
                 visible: hasAction('tutorial')
                 //: PUll down menu item
-                text: qsTr("Tutorial")
+                //% "Tutorial"
+                text: qsTrId("app-tutorial")
                 onClicked: linkHandler.handleLink("start-app://sailfish-tutorial")
             }
         }
@@ -121,14 +137,14 @@ Page {
             Label {
                 visible: notFound
                 horizontalAlignment: Qt.AlignHCenter
-                //: Error message
-                text: qsTr("The requested page wasn't found, please try again later")
+                //% "The requested page wasn't found, please try again later"
+                text: qsTrId("error-document-not-found")
             }
             Label {
                 visible: genericError
                 horizontalAlignment: Qt.AlignHCenter
-                //: Error message
-                text: qsTr("There was an error while loading the page, please try again later")
+                //% "There was an error while loading the page, please try again later"
+                text: qsTrId("error-loading-failed")
                 padding: Theme.paddingLarge
             }
 
