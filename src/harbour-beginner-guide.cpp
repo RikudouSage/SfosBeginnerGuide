@@ -9,6 +9,7 @@
 #include <QGuiApplication>
 #include <QLocale>
 #include <QDebug>
+#include <QTranslator>
 
 #include <sailfishapp.h>
 
