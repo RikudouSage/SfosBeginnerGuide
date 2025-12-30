@@ -15,11 +15,13 @@ signals:
     void unsupportedLinkType();
     void handlingLinkFailed();
     void readerPageRequested(const QString &page);
+    void storeNotAvailable();
 
 private:
     void handleAppLink(const QString &url);
     void handleExternalLink(const QString &url);
     void handleDocumentLink(const QString &link);
+    void handleJollaStoreLink(const QString &url);
 };
 
 #endif // LINKHANDLER_H

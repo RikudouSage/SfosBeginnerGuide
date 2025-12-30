@@ -55,6 +55,10 @@
         <extracomment>PUll down menu item</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>It seems you don&apos;t have the Jolla store on your device.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>

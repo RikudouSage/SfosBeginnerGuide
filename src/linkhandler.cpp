@@ -5,11 +5,18 @@
 #include <QUrl>
 #include <QStandardPaths>
 #include <QFile>
+#include <QDBusConnection>
+#include <QDBusConnectionInterface>
+#include <QDBusInterface>
+#include <QDBusPendingCall>
+#include <QDBusPendingCallWatcher>
+#include <QTimer>
 
 static const auto SchemeHttp = QStringLiteral("http");
 static const auto SchemeHttps = QStringLiteral("https");
 static const auto SchemeOpenApp = QStringLiteral("start-app");
 static const auto SchemeDocument = QStringLiteral("document");
+static const auto SchemeJollaStore = QStringLiteral("jolla-store");
 
 LinkHandler::LinkHandler(QObject *parent) : QObject(parent)
 {
@@ -25,6 +32,8 @@ void LinkHandler::handleLink(const QString &link)
         handleAppLink(link);
     } else if (url.scheme() == SchemeDocument) {
         handleDocumentLink(link);
+    } else if (url.scheme() == SchemeJollaStore) {
+        handleJollaStoreLink(link);
     } else {
         emit unsupportedLinkType();
     }
@@ -59,4 +68,57 @@ void LinkHandler::handleDocumentLink(const QString &link)
 {
     const QUrl url(link);
     emit readerPageRequested(url.path());
+}
+
+void LinkHandler::handleJollaStoreLink(const QString &url)
+{
+    const auto appName = QString(url).mid(SchemeJollaStore.length() + QStringLiteral("://").length());
+
+    auto bus = QDBusConnection::sessionBus();
+    auto *busIface = bus.interface();
+    if (!busIface) {
+        emit handlingLinkFailed();
+        return;
+    }
+
+    if (!busIface->isServiceRegistered(QStringLiteral("com.jolla.jollastore"))) {
+        emit storeNotAvailable();
+        return;
+    }
+
+    QDBusInterface storeIface(
+        QStringLiteral("com.jolla.jollastore"),
+        QStringLiteral("/StoreClient"),
+        QStringLiteral("com.jolla.jollastore"),
+        bus
+    );
+
+    if (!storeIface.isValid()) {
+        emit handlingLinkFailed();
+        return;
+    }
+
+    QDBusPendingCall call = storeIface.asyncCall(QStringLiteral("showApp"), appName);
+    auto *watcher = new QDBusPendingCallWatcher(call, this);
+
+    auto *timeout = new QTimer(watcher);
+    timeout->setSingleShot(true);
+    timeout->start(1500);
+
+    connect(timeout, &QTimer::timeout, this, [this, watcher]() {
+        watcher->deleteLater();
+        emit handlingLinkFailed();
+    });
+
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, watcher, timeout]() {
+        timeout->stop();
+
+        QDBusPendingReply<> reply = *watcher;
+        watcher->deleteLater();
+
+        if (reply.isError()) {
+            emit handlingLinkFailed();
+            return;
+        }
+    });
 }
