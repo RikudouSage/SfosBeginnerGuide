@@ -22,6 +22,12 @@ constexpr auto TRANSLATION_INSTALL_DIR = "/usr/share/harbour-beginner-guide/tran
 int main(int argc, char *argv[])
 {
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
+    const auto settings = new AppSettings(app.data());
+    auto language = settings->rawLanguage();
+    if (language.isEmpty()) {
+        language = QLocale::system().name();
+    }
+    qInfo() << "Using language: " << language;
 
     QTranslator *defaultLang = new QTranslator(app.data());
     if (!defaultLang->load("harbour-beginner-guide-en", TRANSLATION_INSTALL_DIR)) {
@@ -30,13 +36,13 @@ int main(int argc, char *argv[])
     QCoreApplication::installTranslator(defaultLang);
 
     QTranslator *translator = new QTranslator(app.data());
-    if (!translator->load(QLocale::system(), "harbour-beginner-guide", "-", TRANSLATION_INSTALL_DIR)) {
-        qWarning() << "Could not load translations for" << QLocale::system().name().toLatin1();
+    if (!translator->load(QLocale(language), "harbour-beginner-guide", "-", TRANSLATION_INSTALL_DIR)) {
+        qWarning() << "Could not load translations for" << language;
     }
     QCoreApplication::installTranslator(translator);
 
     QScopedPointer<QQuickView> v(SailfishApp::createView());
-    v->rootContext()->setContextProperty("settings", new AppSettings(app.data()));
+    v->rootContext()->setContextProperty("settings", settings);
 
     qmlRegisterType<Intl>("dev.chrastecky", 1, 0, "Intl");
     qmlRegisterType<LinkHandler>("dev.chrastecky", 1, 0, "LinkHandler");

@@ -5,7 +5,7 @@
     <name></name>
     <message id="loading">
         <location filename="../qml/pages/LanguageLoader.qml" line="11"/>
-        <location filename="../qml/pages/ReaderPage.qml" line="101"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="102"/>
         <source>Loading...</source>
         <extracomment>Inside a loader</extracomment>
         <translation>Loading...</translation>
@@ -31,18 +31,19 @@
         <translation>Jolla Store</translation>
     </message>
     <message id="error-link-handler-no-store">
-        <location filename="../qml/pages/ReaderPage.qml" line="77"/>
-        <location filename="../qml/pages/ReaderPage.qml" line="83"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="78"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="84"/>
         <source>It seems you don&apos;t have %1 on your device.</source>
+        <extracomment>This is for missing stores, the %1 will be replaced by a store name like Jolla Store, Storeman etc.</extracomment>
         <translation>It seems you don&apos;t have %1 on your device.</translation>
     </message>
     <message id="app-storeman">
-        <location filename="../qml/pages/ReaderPage.qml" line="81"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="82"/>
         <source>Storeman</source>
         <translation>Storeman</translation>
     </message>
     <message id="page-settings">
-        <location filename="../qml/pages/ReaderPage.qml" line="116"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="117"/>
         <location filename="../qml/pages/Settings.qml" line="26"/>
         <source>Settings</source>
         <extracomment>Pull down menu item
@@ -51,18 +52,18 @@ Page title</extracomment>
         <translation>Settings</translation>
     </message>
     <message id="app-tutorial">
-        <location filename="../qml/pages/ReaderPage.qml" line="124"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="125"/>
         <source>Tutorial</source>
         <extracomment>PUll down menu item</extracomment>
         <translation>Tutorial</translation>
     </message>
     <message id="error-document-not-found">
-        <location filename="../qml/pages/ReaderPage.qml" line="141"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="142"/>
         <source>The requested page wasn&apos;t found, please try again later</source>
         <translation>The requested page wasn&apos;t found, please try again later</translation>
     </message>
     <message id="error-loading-failed">
-        <location filename="../qml/pages/ReaderPage.qml" line="147"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="148"/>
         <source>There was an error while loading the page, please try again later</source>
         <translation>There was an error while loading the page, please try again later</translation>
     </message>

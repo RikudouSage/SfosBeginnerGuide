@@ -26,6 +26,7 @@
     </message>
     <message id="error-link-handler-no-store">
         <source>It seems you don&apos;t have %1 on your device.</source>
+        <extracomment>This is for missing stores, the %1 will be replaced by a store name like Jolla Store, Storeman etc.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="app-storeman">

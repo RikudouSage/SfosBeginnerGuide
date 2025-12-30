@@ -73,6 +73,7 @@ Page {
         onStoreNotAvailable: {
             //% "Jolla Store"
             const storeName = qsTrId("app-jolla-store");
+            //: This is for missing stores, the %1 will be replaced by a store name like Jolla Store, Storeman etc.
             //% "It seems you don't have %1 on your device."
             notificationStack.push(qsTrId("error-link-handler-no-store").arg(storeName), true)
         }
