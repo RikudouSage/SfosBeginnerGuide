@@ -18,6 +18,18 @@ Page {
                 //% "Search"
                 title: qsTrId("app-search")
             }
+
+            Label {
+                //% "Search text"
+                text: qsTrId("search-field-label")
+                x: Theme.paddingLarge + Theme.paddingSmall
+            }
+
+            SearchField {
+                id: searchField
+                //% "How to install apps?"
+                placeholderText: qsTrId("search-field-placeholder")
+            }
         }
     }
 }

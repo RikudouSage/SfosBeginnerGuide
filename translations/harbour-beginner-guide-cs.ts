@@ -100,5 +100,15 @@ Page title</extracomment>
         <source>Beginner&apos;s Guide</source>
         <translation>Příručka pro nováčky</translation>
     </message>
+    <message id="search-field-label">
+        <location filename="../qml/pages/Search.qml" line="24"/>
+        <source>Search text</source>
+        <translation>Text k vyhledání</translation>
+    </message>
+    <message id="search-field-placeholder">
+        <location filename="../qml/pages/Search.qml" line="31"/>
+        <source>How to install apps?</source>
+        <translation>Jak se instalují aplikace?</translation>
+    </message>
 </context>
 </TS>

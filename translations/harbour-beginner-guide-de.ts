@@ -78,5 +78,13 @@ Page title</extracomment>
         <extracomment>Pull down menu item</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message id="search-field-label">
+        <source>Search text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="search-field-placeholder">
+        <source>How to install apps?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
