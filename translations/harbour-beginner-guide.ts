@@ -69,5 +69,14 @@ Page title</extracomment>
         <extracomment>Pull down menu item</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message id="app-title">
+        <source>Beginner&apos;s Guide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="app-search">
+        <source>Search</source>
+        <extracomment>Pull down menu item</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

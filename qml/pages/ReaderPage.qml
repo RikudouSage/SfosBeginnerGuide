@@ -108,7 +108,15 @@ Page {
         contentHeight: column.height
 
         PullDownMenu {
-            visible: hasAction('settings') || hasAction('tutorial') || hasAction('jolla-store') || hasAction('storeman') || hasAction('chum')
+            visible: appRoot.hasCapability('searching') || hasAction('settings') || hasAction('tutorial') || hasAction('jolla-store') || hasAction('storeman') || hasAction('chum')
+
+            MenuItem {
+                visible: appRoot.hasCapability('searching')
+                //: Pull down menu item
+                //% "Search"
+                text: qsTrId("app-search")
+                onClicked: pageStack.push("Search.qml")
+            }
 
             MenuItem {
                 visible: hasAction('settings')

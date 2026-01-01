@@ -25,8 +25,9 @@ DISTFILES += qml/harbour-beginner-guide.qml \
     qml/components/NotificationStack.qml \
     qml/components/LinkButton.qml \
     qml/cover/CoverPage.qml \
-    qml/pages/LanguageLoader.qml \
+    qml/pages/Initializer.qml \
     qml/pages/ReaderPage.qml \
+    qml/pages/Search.qml \
     qml/pages/Settings.qml \
     rpm/harbour-beginner-guide.changes.in \
     rpm/harbour-beginner-guide.changes.run.in \

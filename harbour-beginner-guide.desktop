@@ -4,6 +4,7 @@ X-Nemo-Application-Type=silica-qt5
 Icon=harbour-beginner-guide
 Exec=harbour-beginner-guide
 Name=Beginner's Guide
+Name[cs]=Příručka pro nováčky
 X-Amber-Translation-Catalog=harbour-beginner-guide
 
 [X-Sailjail]
