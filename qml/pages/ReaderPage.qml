@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 
 import dev.chrastecky 1.0
 
+import "../js/common.js" as Common
 import "../components"
 
 Page {
@@ -241,44 +242,17 @@ Page {
     }
 
     Component.onCompleted: {
-        while (pageToLoad.indexOf('/') === 0) {
-            pageToLoad = pageToLoad.substring(1);
-        }
-
-        var language = settings.language;
-        if (appRoot.languages.indexOf(settings.language) < 0) {
-            language = "en";
-        }
-
-        if (pageToLoad.indexOf(language + "/") === 0) {
-            pageToLoad = pageToLoad.substring((language + "/").length);
-        }
-
-        const pageUrl = apiUrl + '/' + language + '/' + pageToLoad;
-
-        if (isDebug) {
-            console.log('Sending GET request to ' + pageUrl);
-        }
-
-        const xhr = new XMLHttpRequest();
-        xhr.open("GET", pageUrl, true);
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (isDebug) {
-                    console.log('Got response from ' + pageUrl + ': ' + xhr.status);
-                }
-                if (xhr.status === 200) {
-                    page.content = JSON.parse(xhr.responseText);
-                    page.handleLoading();
-                } else if (xhr.status === 404) {
-                    page.notFound = true;
-                    page.loaded = true;
-                } else {
-                    page.genericError = true;
-                    page.loaded = true;
-                }
+        Common.fetchDocument(pageToLoad, function(statusCode, body) {
+            if (statusCode === 200) {
+                page.content = body;
+                page.handleLoading();
+            } else if (statusCode === 404) {
+                page.notFound = true;
+                page.loaded = true;
+            } else {
+                page.genericError = true;
+                page.loaded = true;
             }
-        };
-        xhr.send();
+        });
     }
 }

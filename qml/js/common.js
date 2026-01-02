@@ -14,8 +14,6 @@ function fetchDocument(pageToLoad, callback) {
 
     var pageUrl = apiUrl + '/' + language + '/' + pageToLoad;
 
-    console.log(pageUrl);
-
     if (isDebug) {
         console.log('Sending GET request to ' + pageUrl);
     }

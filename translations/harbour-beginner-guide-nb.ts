@@ -5,56 +5,56 @@
     <name></name>
     <message id="loading">
         <location filename="../qml/pages/Initializer.qml" line="20"/>
-        <location filename="../qml/pages/ReaderPage.qml" line="102"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="103"/>
         <source>Loading...</source>
         <extracomment>Inside a loader</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="error-link-handler-app-not-found">
-        <location filename="../qml/pages/ReaderPage.qml" line="68"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="69"/>
         <source>The requested app is not installed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="error-link-handler-unknown-scheme">
-        <location filename="../qml/pages/ReaderPage.qml" line="70"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="71"/>
         <source>This type of link is not supported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="error-link-handler-generic-error">
-        <location filename="../qml/pages/ReaderPage.qml" line="72"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="73"/>
         <source>Could not open the link.</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="app-jolla-store">
-        <location filename="../qml/pages/ReaderPage.qml" line="75"/>
-        <location filename="../qml/pages/ReaderPage.qml" line="141"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="76"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="142"/>
         <source>Jolla Store</source>
         <extracomment>Pull down menu item</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="error-link-handler-no-store">
-        <location filename="../qml/pages/ReaderPage.qml" line="78"/>
-        <location filename="../qml/pages/ReaderPage.qml" line="84"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="79"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="85"/>
         <source>It seems you don&apos;t have %1 on your device.</source>
         <extracomment>This is for missing stores, the %1 will be replaced by a store name like Jolla Store, Storeman etc.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="app-storeman">
-        <location filename="../qml/pages/ReaderPage.qml" line="82"/>
-        <location filename="../qml/pages/ReaderPage.qml" line="149"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="83"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="150"/>
         <source>Storeman</source>
         <extracomment>Pull down menu item</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="app-search">
-        <location filename="../qml/pages/ReaderPage.qml" line="117"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="118"/>
         <location filename="../qml/pages/Search.qml" line="113"/>
         <source>Search</source>
         <extracomment>Pull down menu item</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="page-settings">
-        <location filename="../qml/pages/ReaderPage.qml" line="125"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="126"/>
         <location filename="../qml/pages/Settings.qml" line="26"/>
         <source>Settings</source>
         <extracomment>Pull down menu item
@@ -63,24 +63,24 @@ Page title</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="app-tutorial">
-        <location filename="../qml/pages/ReaderPage.qml" line="133"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="134"/>
         <source>Tutorial</source>
         <extracomment>Pull down menu item</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="app-chum">
-        <location filename="../qml/pages/ReaderPage.qml" line="157"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="158"/>
         <source>Chum</source>
         <extracomment>Pull down menu item</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="error-document-not-found">
-        <location filename="../qml/pages/ReaderPage.qml" line="174"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="175"/>
         <source>The requested page wasn&apos;t found, please try again later</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="error-loading-failed">
-        <location filename="../qml/pages/ReaderPage.qml" line="180"/>
+        <location filename="../qml/pages/ReaderPage.qml" line="181"/>
         <source>There was an error while loading the page, please try again later</source>
         <translation type="unfinished"></translation>
     </message>

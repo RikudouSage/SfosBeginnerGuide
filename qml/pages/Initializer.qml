@@ -25,38 +25,28 @@ Page {
         const urlLang = appRoot.apiUrl + '/languages';
         const urlCapabilities = appRoot.apiUrl + '/capabilities';
 
-        const xhrLang = new XMLHttpRequest();
-        xhrLang.open("GET", urlLang, true);
-        xhrLang.onreadystatechange = function() {
-            if (xhrLang.readyState === XMLHttpRequest.DONE) {
-                if (xhrLang.status === 200) {
-                    appRoot.languages = JSON.parse(xhrLang.responseText);
-                } else {
-                    console.error("Failed getting a list of available languages from the api");
-                    appRoot.languages = ["en"];
-                }
-
-                languagesFetched = true;
-                redirectOnReady();
+        httpClient.sendRequest(urlLang, function(statusCode, body) {
+            if (statusCode === 200) {
+                appRoot.languages = JSON.parse(body);
+            } else {
+                console.error("Failed getting a list of available languages from the api");
+                appRoot.languages = ["en"];
             }
-        };
-        xhrLang.send();
 
-        const xhrCapabilities = new XMLHttpRequest();
-        xhrCapabilities.open("GET", urlCapabilities, true);
-        xhrCapabilities.onreadystatechange = function() {
-            if (xhrCapabilities.readyState === XMLHttpRequest.DONE) {
-                if (xhrCapabilities.status === 200) {
-                    appRoot.capabilities = JSON.parse(xhrCapabilities.responseText);
-                } else {
-                    console.error("Failed getting capabitilies from the api");
-                    appRoot.capabilities = {};
-                }
+            languagesFetched = true;
+            redirectOnReady();
+        });
 
-                capabilitiesReady = true;
-                redirectOnReady();
+        httpClient.sendRequest(urlCapabilities, function(statusCode, body) {
+            if (statusCode === 200) {
+                appRoot.capabilities = JSON.parse(body);
+            } else {
+                console.error("Failed getting capabitilies from the api");
+                appRoot.capabilities = {};
             }
-        };
-        xhrCapabilities.send();
+
+            capabilitiesReady = true;
+            redirectOnReady();
+        });
     }
 }
