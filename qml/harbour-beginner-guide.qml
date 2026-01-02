@@ -8,10 +8,6 @@ ApplicationWindow {
     property var capabilities: ({})
 
     function hasCapability(name) {
-        if (isDebug) {
-            return true;
-        }
-
         if (typeof capabilities[name] === 'undefined') {
             return false;
         }
