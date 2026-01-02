@@ -16,6 +16,7 @@
 #include "appsettings.h"
 #include "intl.h"
 #include "linkhandler.h"
+#include "httpclient.h"
 
 // todo don't hardcode
 constexpr auto TRANSLATION_INSTALL_DIR = "/usr/share/harbour-beginner-guide/translations";
@@ -42,8 +43,10 @@ int main(int argc, char *argv[])
     }
     QCoreApplication::installTranslator(translator);
 
+    const auto httpClient = new HttpClient(app.data());
     QScopedPointer<QQuickView> v(SailfishApp::createView());
     v->rootContext()->setContextProperty("settings", settings);
+    v->rootContext()->setContextProperty("httpClient", httpClient);
 
     qmlRegisterType<Intl>("dev.chrastecky", 1, 0, "Intl");
     qmlRegisterType<LinkHandler>("dev.chrastecky", 1, 0, "LinkHandler");

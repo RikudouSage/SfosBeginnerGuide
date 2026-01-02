@@ -48,7 +48,7 @@
     </message>
     <message id="app-search">
         <location filename="../qml/pages/ReaderPage.qml" line="117"/>
-        <location filename="../qml/pages/Search.qml" line="19"/>
+        <location filename="../qml/pages/Search.qml" line="113"/>
         <source>Search</source>
         <extracomment>Pull down menu item</extracomment>
         <translation>Vyhledávání</translation>
@@ -100,15 +100,25 @@ Page title</extracomment>
         <source>Beginner&apos;s Guide</source>
         <translation>Příručka pro nováčky</translation>
     </message>
+    <message id="search-field-placeholder">
+        <location filename="../qml/pages/Search.qml" line="119"/>
+        <source>How to install apps?</source>
+        <translation>Jak se instalují aplikace?</translation>
+    </message>
     <message id="search-field-label">
-        <location filename="../qml/pages/Search.qml" line="24"/>
+        <location filename="../qml/pages/Search.qml" line="121"/>
         <source>Search text</source>
         <translation>Text k vyhledání</translation>
     </message>
-    <message id="search-field-placeholder">
-        <location filename="../qml/pages/Search.qml" line="31"/>
-        <source>How to install apps?</source>
-        <translation>Jak se instalují aplikace?</translation>
+    <message id="error-search-generic">
+        <location filename="../qml/pages/Search.qml" line="129"/>
+        <source>There was an error while searching, please try again later.</source>
+        <translation>Nastala chyba při vyhledávání, zkuste to prosím znovu později.</translation>
+    </message>
+    <message id="search-in-progress">
+        <location filename="../qml/pages/Search.qml" line="139"/>
+        <source>Searching...</source>
+        <translation>Vyhledávání...</translation>
     </message>
 </context>
 </TS>

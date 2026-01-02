@@ -78,12 +78,20 @@ Page title</extracomment>
         <extracomment>Pull down menu item</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message id="search-field-placeholder">
+        <source>How to install apps?</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="search-field-label">
         <source>Search text</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="search-field-placeholder">
-        <source>How to install apps?</source>
+    <message id="error-search-generic">
+        <source>There was an error while searching, please try again later.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="search-in-progress">
+        <source>Searching...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

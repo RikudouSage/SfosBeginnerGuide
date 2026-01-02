@@ -17,6 +17,7 @@ QT += dbus
 
 SOURCES += src/harbour-beginner-guide.cpp \
     src/appsettings.cpp \
+    src/httpclient.cpp \
     src/intl.cpp \
     src/linkhandler.cpp
 
@@ -25,6 +26,7 @@ DISTFILES += qml/harbour-beginner-guide.qml \
     qml/components/NotificationStack.qml \
     qml/components/LinkButton.qml \
     qml/cover/CoverPage.qml \
+    qml/js/common.js \
     qml/pages/Initializer.qml \
     qml/pages/ReaderPage.qml \
     qml/pages/Search.qml \
@@ -52,5 +54,6 @@ TRANSLATIONS += translations/harbour-beginner-guide-en.ts \
 
 HEADERS += \
     src/appsettings.h \
+    src/httpclient.h \
     src/intl.h \
     src/linkhandler.h

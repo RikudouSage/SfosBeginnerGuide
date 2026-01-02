@@ -48,7 +48,7 @@
     </message>
     <message id="app-search">
         <location filename="../qml/pages/ReaderPage.qml" line="117"/>
-        <location filename="../qml/pages/Search.qml" line="19"/>
+        <location filename="../qml/pages/Search.qml" line="113"/>
         <source>Search</source>
         <extracomment>Pull down menu item</extracomment>
         <translation>Search</translation>
@@ -100,15 +100,25 @@ Page title</extracomment>
         <source>Beginner&apos;s Guide</source>
         <translation>Beginner&apos;s Guide</translation>
     </message>
+    <message id="search-field-placeholder">
+        <location filename="../qml/pages/Search.qml" line="119"/>
+        <source>How to install apps?</source>
+        <translation>How to install apps?</translation>
+    </message>
     <message id="search-field-label">
-        <location filename="../qml/pages/Search.qml" line="24"/>
+        <location filename="../qml/pages/Search.qml" line="121"/>
         <source>Search text</source>
         <translation>Search text</translation>
     </message>
-    <message id="search-field-placeholder">
-        <location filename="../qml/pages/Search.qml" line="31"/>
-        <source>How to install apps?</source>
-        <translation>How to install apps?</translation>
+    <message id="error-search-generic">
+        <location filename="../qml/pages/Search.qml" line="129"/>
+        <source>There was an error while searching, please try again later.</source>
+        <translation>There was an error while searching, please try again later.</translation>
+    </message>
+    <message id="search-in-progress">
+        <location filename="../qml/pages/Search.qml" line="139"/>
+        <source>Searching...</source>
+        <translation>Searching...</translation>
     </message>
 </context>
 </TS>
