@@ -8,22 +8,22 @@
         <location filename="../qml/pages/ReaderPage.qml" line="103"/>
         <source>Loading...</source>
         <extracomment>Inside a loader</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Laster inn...</translation>
     </message>
     <message id="error-link-handler-app-not-found">
         <location filename="../qml/pages/ReaderPage.qml" line="69"/>
         <source>The requested app is not installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Den etterspurte appen er ikke installert.</translation>
     </message>
     <message id="error-link-handler-unknown-scheme">
         <location filename="../qml/pages/ReaderPage.qml" line="71"/>
         <source>This type of link is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne typen lenke er ikke støttet.</translation>
     </message>
     <message id="error-link-handler-generic-error">
         <location filename="../qml/pages/ReaderPage.qml" line="73"/>
         <source>Could not open the link.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke åpne lenken.</translation>
     </message>
     <message id="app-jolla-store">
         <location filename="../qml/pages/ReaderPage.qml" line="76"/>
@@ -93,7 +93,7 @@ Page title</extracomment>
     <message id="language-label">
         <location filename="../qml/pages/Settings.qml" line="40"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Språk</translation>
     </message>
     <message id="app-title">
         <location filename="../qml/cover/CoverPage.qml" line="12"/>
@@ -103,7 +103,7 @@ Page title</extracomment>
     <message id="search-field-placeholder">
         <location filename="../qml/pages/Search.qml" line="119"/>
         <source>How to install apps?</source>
-        <translation type="unfinished"></translation>
+        <translation">Hvordan installere apper?</translation>
     </message>
     <message id="search-field-label">
         <location filename="../qml/pages/Search.qml" line="121"/>
